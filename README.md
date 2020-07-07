@@ -7,11 +7,11 @@
 
 Optionally
 
-- When chaning things in the code, run `npm run dev` to recompile the code.
+- When changing things in the code, run `npm run dev` to recompile the code.
 
 ## Cypress task usage
 
-```
+```js
 describe("Auth0 cypress command test", () => {
     it("Navigates trough the website", () => {
         // Go to the homepage
