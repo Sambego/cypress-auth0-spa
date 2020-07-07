@@ -27,3 +27,5 @@ describe("Auth0 cypress command test", () => {
 ```
 
 The Cypress command assumes the Auth0 credentials, a username and password are set in the `cypress.json` file.
+
+![Screenshot](cypress-demo.gif)

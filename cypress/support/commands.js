@@ -45,7 +45,7 @@ const createLoginUrl = async(username) => {
 };
 
 const logout = async() => {
-    debug(`🔒 Loginf out`);
+    debug(`🔒 Logging out`);
     const auth0 = await createAuth0Client({
         cacheLocation: "localstorage",
         ...Cypress.env("auth0_config"),
@@ -66,7 +66,9 @@ Cypress.Commands.add("enterUserCredentials", (username, password) => {
         } else {
             // Fill in login form
             cy.get('[name="email"].auth0-lock-input').clear().type(username);
-            cy.get('[name="password"].auth0-lock-input').clear().type(password);
+            cy.get('[name="password"].auth0-lock-input')
+                .clear()
+                .type(password, { log: false });
             cy.get(".auth0-lock-submit").click();
         }
 
