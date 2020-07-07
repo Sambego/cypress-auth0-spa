@@ -1,0 +1,30 @@
+{
+    "name": "cypress-test",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "dependencies": {
+        "@auth0/auth0-spa-js": "^1.10.0",
+        "dotenv": "^8.2.0",
+        "navigo": "^7.1.2"
+    },
+    "devDependencies": {
+        "@babel/cli": "^7.10.4",
+        "@babel/core": "^7.10.4",
+        "@babel/preset-env": "^7.10.4",
+        "@rollup/plugin-node-resolve": "^8.1.0",
+        "cypress": "^4.9.0",
+        "http-server": "^0.12.3",
+        "qss": "^2.0.3",
+        "rollup": "^2.19.0"
+    },
+    "scripts": {
+        "start": "http-server",
+        "build": "babel src -d dist",
+        "build:dev": "babel src -d dist -w",
+        "dev": "rollup src/index.js --file dist/index.js --format es -p @rollup/plugin-node-resolve -w",
+        "test": "cypress open"
+    },
+    "author": "Sambego",
+    "license": "MIT"
+}

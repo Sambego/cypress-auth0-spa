@@ -1,0 +1,12 @@
+{
+    "env": {
+        "username": "cypress@test.com",
+        "password": "CypressTest1234",
+        "auth0_config": {
+            "domain": "",
+            "client_id": "",
+            "redirect_uri": "http://localhost:8080"
+        }
+    },
+    "chromeWebSecurity": false
+}

@@ -1,0 +1,49 @@
+<html>
+
+<head>
+    <title>Cypress demo</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous" />
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/" data-href="/">Cypress demo</a>
+            <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/public" data-href="/public">Public</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link active"
+              aria-current="page"
+              href="/private"
+              data-href="/private"
+              >Private</a
+            >
+          </li>
+        </ul>
+        <span data-placeholder="user" style="padding-right: 20px;"></span>
+        <button class="btn btn-primary foo" data-button="login">Login</button>
+        <button class="btn btn-primary" data-button="logout">Logout</button>
+      </div>
+    </nav>
+
+    <main class="container" class="pt-3">
+      <div class="home" data-content="home">
+        <h1>Home</h1>
+      </div>
+
+      <div class="public" data-content="public" hidden>
+        <h1>Public content</h1>
+      </div>
+
+      <div class="private" data-content="private" hidden>
+        <h1>Private content</h1>
+      </div>
+    </main>
+
+    <script src="./dist/index.js"></script>
+  </body>
+</html>
