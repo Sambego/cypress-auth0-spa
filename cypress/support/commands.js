@@ -57,6 +57,15 @@ Cypress.Commands.add("createLoginUrl", (username) => {
     return createLoginUrl(username);
 });
 
+Cypress.Commands.add("allowApp", () => {
+    cy.get("body").then(($body) => {
+        // If OAuth consent screen, allow
+        if ($body.find("#allow").length > 0) {
+            cy.get("#allow").click();
+        }
+    })
+});
+
 Cypress.Commands.add("enterUserCredentials", (username, password) => {
     cy.wait(500);
     cy.get("body").then(($body) => {
@@ -71,19 +80,21 @@ Cypress.Commands.add("enterUserCredentials", (username, password) => {
                 .type(password, { log: false });
             cy.get(".auth0-lock-submit").click();
         }
-
-        // If OAuth consent screen, allow
-        if ($body.find("#allow").length > 0) {
-            cy.get("#allow").click();
-        }
-    });
+    })
+    cy.wait(500);
+    cy.allowApp()
 });
 
 Cypress.Commands.add("loginWithAuth0", (username, password) => {
+    // See https://github.com/cypress-io/cypress/issues/408
+    // Needed to clear all cookies from all domains
+    // Might only be necessary for "first" login
+    cy.clearCookies({ domain: null })
     cy.createLoginUrl(username).then((url) => {
         cy.window().then((window) => {
             // cy.visit() doesn't work 🤷‍♂️
             window.location.assign(url);
+            cy.allowApp()
             cy.enterUserCredentials(username, password);
         });
     });

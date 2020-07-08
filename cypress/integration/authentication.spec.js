@@ -28,7 +28,7 @@ describe("Authentication test", () => {
     it("Should redirect to Auth0", () => {
         cy.contains("Login").click();
         cy.wait(2000);
-        cy.url().should("include", "sambego.eu.auth0.com");
+        cy.url().should("include", "auth0.com");
     });
 
     it("Should fill in login form", () => {

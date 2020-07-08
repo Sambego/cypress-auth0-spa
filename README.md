@@ -2,6 +2,7 @@
 
 - Add Auth0 credentials to [src/config.js](https://github.com/Sambego/cypress-auth0-spa/blob/master/src/config.js)
 - Add Auth0 credentials to [cypress.json](https://github.com/Sambego/cypress-auth0-spa/blob/master/cypress.json)
+- Compile and watch with `npm run dev`
 - Run dev server with `npm run start`
 - Run tests with `npm run test`
 
